@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>評価入力フォーム</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>チームの評価を入力してください</h1>
+    <form action="/submit" method="post">
+        <label for="team_name">チーム名:</label>
+        <input type="text" id="team_name" name="team_name" required><br><br>
+
+        <label for="evaluation">評価スコア (1〜5):</label>
+        <input type="number" id="evaluation" name="evaluation" min="1" max="5" required><br><br>
+
+        <label for="comments">コメント:</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="50" required></textarea><br><br>
+
+        <button type="submit">評価を送信</button>
+    </form>
+    <a href="/evaluations">評価一覧を見る</a>
+</body>
+</html>

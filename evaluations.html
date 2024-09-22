@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>評価一覧</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>チーム評価一覧</h1>
+    <table>
+        <tr>
+            <th>チーム名</th>
+            <th>評価スコア</th>
+            <th>コメント</th>
+        </tr>
+        {% for evaluation in evaluations %}
+        <tr>
+            <td>{{ evaluation.team_name }}</td>
+            <td>{{ evaluation.evaluation }}</td>
+            <td>{{ evaluation.comments }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">評価入力フォームに戻る</a>
+</body>
+</html>
